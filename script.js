@@ -91,20 +91,6 @@ function setupCutoutFallback() {
   }
 }
 
-function setupRsvp() {
-  const form = document.getElementById("rsvpForm");
-  const message = document.getElementById("formMessage");
-
-  form?.addEventListener("submit", (event) => {
-    event.preventDefault();
-
-    const data = Object.fromEntries(new FormData(form).entries());
-    localStorage.setItem("wedding-rsvp-preview", JSON.stringify(data));
-    message.textContent = "고마워요. 답변이 이 브라우저에 임시 저장되었습니다.";
-    form.reset();
-  });
-}
-
 function setupSoundToggle() {
   const button = document.querySelector("[data-sound]");
 
@@ -122,7 +108,6 @@ setupReveals();
 setupPetals();
 setupScrollButtons();
 setupCutoutFallback();
-setupRsvp();
 setupSoundToggle();
 
 setInterval(updateCountdown, 1000);
