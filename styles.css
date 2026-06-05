@@ -19,6 +19,16 @@ html {
   scroll-behavior: smooth;
 }
 
+html,
+body,
+img,
+button,
+a {
+  -webkit-touch-callout: none;
+  -webkit-user-drag: none;
+  user-select: none;
+}
+
 body {
   margin: 0;
   min-width: 320px;

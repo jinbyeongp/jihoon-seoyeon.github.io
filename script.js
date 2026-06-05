@@ -216,6 +216,18 @@ function setupSoundToggle() {
   });
 }
 
+function setupContentProtection() {
+  document.querySelectorAll("img").forEach((image) => {
+    image.setAttribute("draggable", "false");
+  });
+
+  ["contextmenu", "dragstart", "selectstart"].forEach((eventName) => {
+    document.addEventListener(eventName, (event) => {
+      event.preventDefault();
+    });
+  });
+}
+
 applyLanguage();
 updateCountdown();
 setupReveals();
@@ -223,5 +235,6 @@ setupPetals();
 setupScrollButtons();
 setupCutoutFallback();
 setupSoundToggle();
+setupContentProtection();
 
 setInterval(updateCountdown, 1000);
