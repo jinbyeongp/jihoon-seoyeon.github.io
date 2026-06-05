@@ -32,6 +32,7 @@ a {
 body {
   margin: 0;
   min-width: 320px;
+  overflow-x: hidden;
   color: var(--ink);
   background:
     radial-gradient(circle at 16% 4%, rgba(250, 217, 95, 0.18), transparent 30rem),
@@ -578,6 +579,14 @@ h1 i {
   word-break: keep-all;
 }
 
+html[lang="en"] .section p,
+html[lang="ru"] .section p,
+html[lang="en"] .photo-story-head p,
+html[lang="ru"] .photo-story-head p {
+  word-break: normal;
+  overflow-wrap: anywhere;
+}
+
 .parents {
   display: grid;
   gap: 8px;
@@ -961,6 +970,182 @@ h1 i {
   50% {
     opacity: 0.26;
     scale: 1.04;
+  }
+}
+
+@media (max-width: 480px) {
+  .sound-toggle {
+    top: 12px;
+    right: 12px;
+    width: 38px;
+    height: 38px;
+  }
+
+  .hero {
+    min-height: 100svh;
+    padding: 18px 14px 88px;
+    align-content: start;
+  }
+
+  .hero::before {
+    inset: 10px;
+    border-radius: 999px 999px 28px 28px;
+  }
+
+  .hero-photo-wash img {
+    width: 86vw;
+    opacity: 0.16;
+  }
+
+  .hero-photo-wash img:first-child {
+    top: 4%;
+    left: -36%;
+  }
+
+  .hero-photo-wash img:last-child {
+    right: -42%;
+    bottom: 16%;
+  }
+
+  .hero-date-card {
+    top: 58px;
+    right: 18px;
+    gap: 6px;
+  }
+
+  .hero-date-card span {
+    font-size: clamp(2.25rem, 13vw, 3rem);
+  }
+
+  .hero-date-card small {
+    font-size: 0.66rem;
+  }
+
+  .hero-copy {
+    width: 100%;
+    padding-top: clamp(118px, 18vh, 148px);
+  }
+
+  h1 {
+    font-size: clamp(3.25rem, 17vw, 4.4rem);
+  }
+
+  .hero-date {
+    max-width: 260px;
+    margin: 0 auto;
+    font-size: 0.78rem;
+    line-height: 1.5;
+  }
+
+  .couple-scene {
+    width: min(82vw, 300px);
+    margin-top: 16px;
+  }
+
+  .open-button {
+    bottom: 18px;
+    min-width: 136px;
+    min-height: 44px;
+  }
+
+  .branch {
+    width: 300px;
+    height: 190px;
+  }
+
+  .branch-a {
+    left: -150px;
+  }
+
+  .branch-b {
+    right: -170px;
+    bottom: 13%;
+  }
+
+  .bloom {
+    width: 82px;
+    height: 82px;
+  }
+
+  .bloom-c {
+    width: 104px;
+    height: 104px;
+  }
+
+  .leafy {
+    width: 86px;
+    height: 46px;
+  }
+
+  .section {
+    width: min(100% - 28px, 560px);
+    padding: 62px 0;
+  }
+
+  .section h2,
+  .photo-story-head h2 {
+    font-size: clamp(1.72rem, 8vw, 2.25rem);
+  }
+
+  .timer {
+    gap: 6px;
+  }
+
+  .timer div {
+    padding: 14px 3px 11px;
+  }
+
+  .timer strong {
+    font-size: clamp(1.35rem, 7.4vw, 2rem);
+  }
+
+  .timer span {
+    font-size: 0.58rem;
+  }
+
+  .photo-story {
+    width: min(100% - 18px, 980px);
+    padding: 64px 0;
+  }
+
+  .photo-story-head {
+    width: min(100% - 18px, 560px);
+    margin-bottom: 26px;
+  }
+
+  .photo-grid {
+    gap: 8px;
+  }
+
+  .photo-card img {
+    min-height: 148px;
+  }
+
+  .photo-card.tall {
+    grid-row: span 1;
+  }
+
+  .photo-card.tall img {
+    min-height: 258px;
+  }
+
+  .photo-card.wide {
+    grid-column: 1 / -1;
+  }
+
+  .timeline li {
+    grid-template-columns: 62px 1fr;
+    gap: 12px;
+    padding: 14px;
+  }
+
+  .map-panel {
+    min-height: 144px;
+  }
+
+  .swatches span {
+    width: 40px;
+    height: 40px;
   }
 }
 
