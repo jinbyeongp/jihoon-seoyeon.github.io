@@ -38,9 +38,8 @@ function setupReveals() {
 
 function setupPetals() {
   const field = document.querySelector(".petal-field");
-  const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
-  if (!field || reduceMotion) return;
+  if (!field) return;
 
   for (let i = 0; i < 22; i += 1) {
     const petal = document.createElement("span");
