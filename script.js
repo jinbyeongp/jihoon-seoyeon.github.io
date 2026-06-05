@@ -175,6 +175,7 @@ function setupScrollButtons() {
   document.querySelectorAll("[data-scroll]").forEach((button) => {
     button.addEventListener("click", () => {
       const target = document.querySelector(button.dataset.scroll);
+      startMusic();
       target?.scrollIntoView({ behavior: "smooth", block: "start" });
     });
   });
@@ -204,16 +205,43 @@ function setupCutoutFallback() {
 
 function setupSoundToggle() {
   const button = document.querySelector("[data-sound]");
+  const music = document.getElementById("bgMusic");
 
   button?.addEventListener("click", () => {
     const dictionary = translations[getLanguage()];
+    const shouldPlay = !music || music.paused;
 
-    button.classList.toggle("is-muted");
-    button.setAttribute(
-      "aria-label",
-      button.classList.contains("is-muted") ? dictionary.soundOn : dictionary.soundOff
-    );
+    if (shouldPlay) {
+      startMusic();
+      button.classList.remove("is-muted");
+      button.setAttribute("aria-label", dictionary.soundOff);
+      return;
+    }
+
+    music.pause();
+    button.classList.add("is-muted");
+    button.setAttribute("aria-label", dictionary.soundOn);
   });
+}
+
+function startMusic() {
+  const music = document.getElementById("bgMusic");
+  const button = document.querySelector("[data-sound]");
+  const dictionary = translations[getLanguage()];
+
+  if (!music) return;
+
+  music.volume = 0.42;
+  music
+    .play()
+    .then(() => {
+      button?.classList.remove("is-muted");
+      button?.setAttribute("aria-label", dictionary.soundOff);
+    })
+    .catch(() => {
+      button?.classList.add("is-muted");
+      button?.setAttribute("aria-label", dictionary.soundOn);
+    });
 }
 
 function setupContentProtection() {
