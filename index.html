@@ -1,0 +1,172 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#fbf7ef">
+    <meta name="description" content="Wedding invitation">
+    <title>Wedding Invitation</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Gowun+Batang:wght@400;700&family=Marcellus&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <button class="sound-toggle" type="button" aria-label="음악 켜기" data-sound>
+      <span></span>
+    </button>
+
+    <div class="petal-field" aria-hidden="true"></div>
+
+    <main class="invite">
+      <section class="hero" id="top">
+        <div class="hero-stage">
+          <div class="floral-spray spray-top" aria-hidden="true">
+            <span class="lemon"></span>
+            <span class="lemon small"></span>
+            <span class="leaf leaf-a"></span>
+            <span class="leaf leaf-b"></span>
+            <span class="leaf leaf-c"></span>
+            <span class="blossom blossom-a"></span>
+          </div>
+          <div class="floral-spray spray-bottom" aria-hidden="true">
+            <span class="lemon"></span>
+            <span class="lemon small"></span>
+            <span class="leaf leaf-a"></span>
+            <span class="leaf leaf-b"></span>
+            <span class="leaf leaf-c"></span>
+            <span class="blossom blossom-a"></span>
+          </div>
+
+          <div class="hero-copy">
+            <p class="eyebrow">Wedding Invitation</p>
+            <h1>
+              <span>Jihoon</span>
+              <i>&amp;</i>
+              <span>Seoyeon</span>
+            </h1>
+            <p class="hero-date">2026. 09. 30. WED</p>
+          </div>
+
+          <div class="couple-scene" aria-label="신랑 신부 이미지 영역">
+            <div class="photo-orbit"></div>
+            <img class="couple-cutout" src="assets/couple-cutout.png" alt="신랑 신부" data-cutout>
+          </div>
+        </div>
+
+        <button class="open-button" type="button" data-scroll="#greeting">
+          초대장 열기
+        </button>
+      </section>
+
+      <section class="section greeting reveal" id="greeting">
+        <p class="kicker">Invitation</p>
+        <h2>소중한 분들을 초대합니다</h2>
+        <p>
+          서로의 계절을 지나 같은 방향을 바라보게 된 두 사람이
+          이제 하나의 약속으로 오래 걸어가려 합니다.
+        </p>
+        <p>
+          기쁜 날, 따뜻한 걸음으로 함께해 주시면
+          그 마음을 오래도록 간직하겠습니다.
+        </p>
+        <div class="parents">
+          <span>신랑측 혼주 <b>김민수 · 이정아</b></span>
+          <span>신부측 혼주 <b>박영호 · 최수진</b></span>
+        </div>
+      </section>
+
+      <section class="section countdown reveal">
+        <p class="kicker">Our Day</p>
+        <h2>예식까지 남은 시간</h2>
+        <div class="timer" aria-live="polite">
+          <div><strong id="days">00</strong><span>days</span></div>
+          <div><strong id="hours">00</strong><span>hours</span></div>
+          <div><strong id="minutes">00</strong><span>min</span></div>
+          <div><strong id="seconds">00</strong><span>sec</span></div>
+        </div>
+      </section>
+
+      <section class="section schedule reveal">
+        <p class="kicker">Timeline</p>
+        <h2>그날의 순서</h2>
+        <ol class="timeline">
+          <li>
+            <time>16:30</time>
+            <div>
+              <strong>게스트 맞이</strong>
+              <span>웰컴 드링크와 포토타임</span>
+            </div>
+          </li>
+          <li>
+            <time>17:00</time>
+            <div>
+              <strong>예식</strong>
+              <span>두 사람의 약속</span>
+            </div>
+          </li>
+          <li>
+            <time>18:00</time>
+            <div>
+              <strong>디너 파티</strong>
+              <span>축하와 이야기의 시간</span>
+            </div>
+          </li>
+        </ol>
+      </section>
+
+      <section class="section place reveal">
+        <p class="kicker">Location</p>
+        <h2>라온 웨딩홀</h2>
+        <p>서울특별시 강남구 테헤란로 123</p>
+        <div class="map-panel">
+          <span>RAON WEDDING</span>
+          <b>Gangnam, Seoul</b>
+        </div>
+        <a class="map-button" href="https://map.naver.com/" target="_blank" rel="noreferrer">지도 보기</a>
+      </section>
+
+      <section class="section dress reveal">
+        <p class="kicker">Dress Code</p>
+        <h2>부드러운 색으로 함께해 주세요</h2>
+        <p>아이보리, 세이지, 레몬, 베이지 톤을 환영합니다.</p>
+        <div class="swatches" aria-label="드레스코드 색상">
+          <span style="--color:#f8f1df"></span>
+          <span style="--color:#9eae88"></span>
+          <span style="--color:#f4d66f"></span>
+          <span style="--color:#d6b98f"></span>
+        </div>
+      </section>
+
+      <section class="section rsvp reveal">
+        <p class="kicker">RSVP</p>
+        <h2>참석 여부를 알려주세요</h2>
+        <form id="rsvpForm">
+          <label>
+            성함
+            <input name="name" type="text" autocomplete="name" required>
+          </label>
+          <fieldset>
+            <legend>참석 여부</legend>
+            <label><input type="radio" name="attendance" value="attend" required> 참석합니다</label>
+            <label><input type="radio" name="attendance" value="absent"> 아쉽지만 참석이 어렵습니다</label>
+          </fieldset>
+          <label>
+            전하고 싶은 말
+            <textarea name="message" rows="4"></textarea>
+          </label>
+          <button type="submit">마음 전하기</button>
+          <p class="form-message" id="formMessage" role="status"></p>
+        </form>
+      </section>
+
+      <footer class="section footer">
+        <p>따뜻한 마음으로 기다리겠습니다.</p>
+        <strong>Jihoon &amp; Seoyeon</strong>
+        <a href="#top">맨 위로</a>
+      </footer>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
