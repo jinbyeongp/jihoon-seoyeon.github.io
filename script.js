@@ -41,13 +41,13 @@ function setupPetals() {
 
   if (!field) return;
 
-  for (let i = 0; i < 22; i += 1) {
+  for (let i = 0; i < 28; i += 1) {
     const petal = document.createElement("span");
-    const size = 7 + Math.random() * 10;
+    const size = 7 + Math.random() * 12;
     const left = Math.random() * 100;
-    const duration = 9 + Math.random() * 9;
+    const duration = 9 + Math.random() * 10;
     const delay = Math.random() * -18;
-    const drift = (Math.random() * 160 - 80).toFixed(0);
+    const drift = (Math.random() * 170 - 85).toFixed(0);
 
     petal.className = "petal";
     petal.style.left = `${left}%`;
@@ -78,16 +78,16 @@ function setupCutoutFallback() {
     cutout.classList.remove("is-missing");
   };
 
-  const showPlaceholder = () => {
+  const hideCutout = () => {
     cutout.classList.add("is-missing");
   };
 
   cutout.addEventListener("load", showCutout);
-  cutout.addEventListener("error", showPlaceholder);
+  cutout.addEventListener("error", hideCutout);
 
   if (cutout.complete) {
     if (cutout.naturalWidth > 0) showCutout();
-    else showPlaceholder();
+    else hideCutout();
   }
 }
 
